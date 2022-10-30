@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgContacts = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbSave = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,8 +45,9 @@
             this.sbStatus = new System.Windows.Forms.StatusStrip();
             this.slStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.slDetails = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnShow = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgContacts)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.sbStatus.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +57,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgContacts);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(675, 487);
@@ -64,21 +65,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contacts:";
             // 
-            // dataGridView1
+            // dgContacts
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgContacts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(662, 461);
-            this.dataGridView1.TabIndex = 0;
+            this.dgContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgContacts.Location = new System.Drawing.Point(7, 20);
+            this.dgContacts.Name = "dgContacts";
+            this.dgContacts.Size = new System.Drawing.Size(662, 461);
+            this.dgContacts.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.btnShow);
             this.groupBox2.Controls.Add(this.sbStatus);
             this.groupBox2.Controls.Add(this.tbSave);
             this.groupBox2.Controls.Add(this.label5);
@@ -196,6 +198,7 @@
             this.sbStatus.Location = new System.Drawing.Point(3, 462);
             this.sbStatus.Name = "sbStatus";
             this.sbStatus.Size = new System.Drawing.Size(273, 22);
+            this.sbStatus.SizingGrip = false;
             this.sbStatus.TabIndex = 11;
             // 
             // slStatus
@@ -209,6 +212,16 @@
             this.slDetails.Name = "slDetails";
             this.slDetails.Size = new System.Drawing.Size(0, 17);
             // 
+            // btnShow
+            // 
+            this.btnShow.Location = new System.Drawing.Point(6, 436);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(82, 23);
+            this.btnShow.TabIndex = 12;
+            this.btnShow.Text = "Show";
+            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,7 +232,7 @@
             this.Name = "Form1";
             this.Text = "28-10-22";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgContacts)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.sbStatus.ResumeLayout(false);
@@ -232,7 +245,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgContacts;
         private System.Windows.Forms.Button tbSave;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -247,6 +260,7 @@
         private System.Windows.Forms.StatusStrip sbStatus;
         private System.Windows.Forms.ToolStripStatusLabel slStatus;
         private System.Windows.Forms.ToolStripStatusLabel slDetails;
+        private System.Windows.Forms.Button btnShow;
     }
 }
 

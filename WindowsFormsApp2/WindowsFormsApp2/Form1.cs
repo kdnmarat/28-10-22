@@ -16,6 +16,8 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
             ContactDetails.AllRecords = new List<ContactDetails>();
+            var bindingSource = new BindingSource(ContactDetails.AllRecords, null);
+            dgContacts.DataSource = bindingSource;
         }
 
         private void tbSave_Click(object sender, EventArgs e)
@@ -36,7 +38,13 @@ namespace WindowsFormsApp2
             ContactDetails.AllRecords.Add(record);
             slStatus.ForeColor = Color.Green;
             slStatus.Text = "OK!";
-            slDetails.Text = "Record was stored";
+            slDetails.Text = $"Record was stored. {ContactDetails.AllRecords.Count} in total.";
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            var bindingSource = new BindingSource(ContactDetails.AllRecords, null);
+            dgContacts.DataSource = bindingSource;
         }
     }
 }
