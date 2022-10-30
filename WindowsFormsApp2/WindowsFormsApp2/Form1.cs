@@ -45,6 +45,9 @@ namespace WindowsFormsApp2
         {
             var bindingSource = new BindingSource(ContactDetails.AllRecords, null);
             dgContacts.DataSource = bindingSource;
+            slStatus.ForeColor = Color.Green;
+            slStatus.Text = "OK!";
+            slDetails.Text = $"{ContactDetails.AllRecords.Count} rows are loaded.";
         }
     }
 }
