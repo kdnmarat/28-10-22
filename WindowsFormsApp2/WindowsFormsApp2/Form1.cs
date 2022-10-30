@@ -49,5 +49,19 @@ namespace WindowsFormsApp2
             slStatus.Text = "OK!";
             slDetails.Text = $"{ContactDetails.AllRecords.Count} rows are loaded.";
         }
+
+        private void dgContacts_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            slStatus.ForeColor = Color.OrangeRed;
+            slStatus.Text = "Changed!";
+            slDetails.Text = $"Row '{e.RowIndex}' was changed in cell '{e.ColumnIndex}'.";
+        }
+
+        private void dgContacts_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            slStatus.ForeColor = Color.OrangeRed;
+            slStatus.Text = "Removed!";
+            slDetails.Text = $"Row '{e.RowIndex}' was deleted.'";
+        }
     }
 }

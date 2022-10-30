@@ -67,14 +67,18 @@
             // 
             // dgContacts
             // 
+            this.dgContacts.AllowUserToAddRows = false;
             this.dgContacts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgContacts.Location = new System.Drawing.Point(7, 20);
+            this.dgContacts.MultiSelect = false;
             this.dgContacts.Name = "dgContacts";
             this.dgContacts.Size = new System.Drawing.Size(662, 461);
             this.dgContacts.TabIndex = 0;
+            this.dgContacts.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgContacts_CellValueChanged);
+            this.dgContacts.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgContacts_RowsRemoved);
             // 
             // groupBox2
             // 
