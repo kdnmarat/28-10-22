@@ -15,6 +15,7 @@ namespace WindowsFormsApp2
         public Form1()
         {
             InitializeComponent();
+            ContactDetails.AllRecords = new List<ContactDetails>();
         }
     }
 }
