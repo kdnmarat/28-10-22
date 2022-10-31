@@ -12,11 +12,12 @@ namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
+        BindingSource bindingSource;
         public Form1()
         {
             InitializeComponent();
             ContactDetails.AllRecords = new List<ContactDetails>();
-            var bindingSource = new BindingSource(ContactDetails.AllRecords, null);
+            bindingSource = new BindingSource(ContactDetails.AllRecords, null);
             dgContacts.DataSource = bindingSource;
         }
 
@@ -35,7 +36,7 @@ namespace WindowsFormsApp2
                 return;
             }
             ContactDetails record = new ContactDetails(name,street,city,state,zip);
-            ContactDetails.AllRecords.Add(record);
+            bindingSource.Add(record);
             slStatus.ForeColor = Color.Green;
             slStatus.Text = "OK!";
             slDetails.Text = $"Record was stored. {ContactDetails.AllRecords.Count} in total.";
@@ -43,8 +44,6 @@ namespace WindowsFormsApp2
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            var bindingSource = new BindingSource(ContactDetails.AllRecords, null);
-            dgContacts.DataSource = bindingSource;
             slStatus.ForeColor = Color.Green;
             slStatus.Text = "OK!";
             slDetails.Text = $"{ContactDetails.AllRecords.Count} rows are loaded.";
